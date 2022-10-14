@@ -1,0 +1,27 @@
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        String []s=sc.nextLine().split(""); 
+        Stack<String>stk = new Stack<String>();
+
+        for(int i=0;i<s.length;i++){
+        
+            if(stk.size()>0 && stk.peek().equals(s[i])){
+                stk.pop();
+            }else{
+                stk.push(s[i]);
+            }
+        }
+        String bag="";
+        if(stk.size()==0){
+            System.out.println("Empty String");
+        }else{
+            for(int i=0;i<stk.size();i++){
+            bag=bag+stk.get(i);
+            }
+            System.out.println(bag);
+        }
+        
+    }
+}
